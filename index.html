@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Escolar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        (function() {
+            emailjs.init("ho8YiWNLg844Io5Fo");
+        })();
+    </script>
+</head>
+<body>
+    
+    <header>
+        <div class="logo-container">
+            <img src="cbtis.png" alt="Logo de la Cafetería Escolar" class="logo">
+            <h1>Cafetería Escolar</h1>
+        </div>
+        <nav>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#desayuno">Almuerzo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#almuerzo">Comida</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#bebidas">Bebidas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#snacks">Snacks</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección del carrito de compras -->
+        <section id="cart">
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+            <button id="clear-cart">Vaciar Carrito</button>
+            <button id="checkout" style="background-color: rgb(21, 145, 21);">Pagar</button>
+        </section>
+       
+        <section id="desayuno">
+            <h2>Almuerzo</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="cereal.jpg" class="card-img-top" alt="Cereal">
+                    <div class="card-body">
+                        <h5 class="card-title">Cereal</h5>
+                        <button onclick="addToCart('Cereal-Yogurt', 30)">Yogurt    $30</button><br><br>
+                        <button onclick="addToCart('Cereal-Leche', 25)">Leche    $25</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="galletas.jpg" class="card-img-top" alt="Galletas">
+                    <div class="card-body">
+                        <h5 class="card-title">Galletas</h5>
+                        <button onclick="addToCart('Galletas', 20)">Galletas    $20</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="panes.jpg" class="card-img-top" alt="Panes">
+                    <div class="card-body">
+                        <h5 class="card-title">Panes</h5>
+                        <button onclick="addToCart('Panes', 20)">Panes     $20</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="brownies.jpg" class="card-img-top" alt="Brownies">
+                    <div class="card-body">
+                        <h5 class="card-title">Brownies</h5>
+                        <button onclick="addToCart('Brownies', 20)">Brownies    $20</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="muffin.jpg" class="card-img-top" alt="Muffin Hershey">
+                    <div class="card-body">
+                        <h5 class="card-title">Muffin Hershey</h5>
+                        <button onclick="addToCart('Muffin Hershey', 22)">Muffin Hershey    $22</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="frutas.jpg" class="card-img-top" alt="Coctel de Fruta">
+                    <div class="card-body">
+                        <h5 class="card-title">Coctel de Fruta</h5>
+                        <button onclick="addToCart('Coctel de Fruta', 20)">Coctel de Fruta    $20</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Cuernito.jpg" class="card-img-top" alt="Cuernito">
+                    <div class="card-body">
+                        <h5 class="card-title">Cuernito</h5>
+                        <button onclick="addToCart('Cuernito', 30)">Cuernito    $30</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="sincronizada.jpg" class="card-img-top" alt="Sincronizada">
+                    <div class="card-body">
+                        <h5 class="card-title">Sincronizada</h5>
+                        <button onclick="addToCart('Sincronizada Especial', 30)">Sincronizada Especial    $30</button><bR><br>
+                        <button onclick="addToCart('Sincronizada Sencilla', 25)">Sincronizada Sencilla    $25</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="almuerzo">
+            <h2>Comida</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="enchilada.jpg" class="card-img-top" alt="Enchiladas">
+                    <div class="card-body">
+                        <h5 class="card-title">Enchiladas</h5>
+                        <button onclick="addToCart('Enchiladas (3 piezas)', 35)">Enchiladas    $35</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="sushi.jpg" class="card-img-top" alt="Sushi">
+                    <div class="card-body">
+                        <h5 class="card-title">Sushi</h5>
+                        <button onclick="addToCart('Sushi', 35)">Sushi    $35</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="chilaquiles.jpg" class="card-img-top" alt="Chilaquiles">
+                    <div class="card-body">
+                        <h5 class="card-title">Chilaquiles</h5>
+                        <button onclick="addToCart('Chilaquiles', 30)">Chilaquiles    $30</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="hotdog.jpg" class="card-img-top" alt="Hot Dogs">
+                    <div class="card-body">
+                        <h5 class="card-title">Hot Dogs</h5>
+                        <button onclick="addToCart('Hot Dog Sencillo', 15)">Hot Dog Sencillo    $15</button><br><br>
+                        <button onclick="addToCart('Hot Dog Con Queso', 20)">Hot Dog Con Queso    $20</button><br><br>
+                        <button onclick="addToCart('Orden de 3 Hot Dogs', 45)">Orden de 3 Hot Dogs    $45</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="tacos.jpg" class="card-img-top" alt="Tacos">
+                    <div class="card-body">
+                        <h5 class="card-title">Tacos</h5>
+                        <button onclick="addToCart('Tacos Sencillos', 20)">Tacos Sencillos    $20</button><br><br>
+                        <button onclick="addToCart('Tacos Con Queso', 25)">Tacos Con Queso    $25</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="torta.jpg" class="card
+                    <img src="torta.jpg" class="card-img-top" alt="Tortas">
+                    <div class="card-body">
+                        <h5 class="card-title">Tortas</h5>
+                        <button onclick="addToCart('Torta Sencilla', 30)">Torta Sencilla    $30</button><br><br>
+                        <button onclick="addToCart('Torta Con Queso', 35)">Torta Con Queso    $35</button><br><br>
+                        <button onclick="addToCart('Torta Combinada', 40)">Torta Combinada    $40</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Hamburguesa.jpg" class="card-img-top" alt="Hamburguesa">
+                    <div class="card-body">
+                        <h5 class="card-title">Hamburguesa</h5>
+                        <button onclick="addToCart('Hamburguesa', 30)">Hamburguesa    $30</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="burrito.jpg" class="card-img-top" alt="Burrito">
+                    <div class="card-body">
+                        <h5 class="card-title">Burrito</h5>
+                        <button onclick="addToCart('Burrito', 45)">Burrito    $45</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="dorado.jpg" class="card-img-top" alt="Tacos dorados">
+                    <div class="card-body">
+                        <h5 class="card-title">Tacos dorados</h5>
+                        <button onclick="addToCart('Tacos Dorados (Orden de 3)', 25)">Tacos Dorados(3)    $25</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Bistec.jpg" class="card-img-top" alt="Bistecs">
+                    <div class="card-body">
+                        <h5 class="card-title">Bistecs</h5>
+                        <button onclick="addToCart('Bistecs', 40)">Bistecs    $40</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pambazo.jpg" class="card-img-top" alt="Pambazos">
+                    <div class="card-body">
+                        <h5 class="card-title">Pambazos</h5>
+                        <button onclick="addToCart('Pambazos', 25)">Pambazos    $25</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="corrida.png" class="card-img-top" alt="Comida corrida">
+                    <div class="card-body">
+                        <h5 class="card-title">Comida corrida</h5>
+                        <button onclick="addToCart('Comida corrida', 50)">Comida corrida    $50</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bebidas">
+            <h2>Bebidas</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="licuado.jpg" class="card-img-top" alt="Licuados">
+                    <div class="card-body">
+                        <h5 class="card-title">Licuados</h5>
+                        <button onclick="addToCart('Licuado Sencillo', 25)">Licuado Sencillo    $25</button><br><br>
+                        <button onclick="addToCart('Licuado Combinado', 30)">Licuado Combinado    $30</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="agua.jpg" class="card-img-top" alt="Agua de fruta">
+                    <div class="card-body">
+                        <h5 class="card-title">Agua de fruta</h5>
+                        <button onclick="addToCart('Agua de Fruta (Medio litro)', 15)">Agua de Fruta (Medio litro)    $15</button><br><br>
+                        <button onclick="addToCart('Agua de Fruta (Litro)', 30)">Agua de Fruta (Litro)    $30</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="frappe.jpg" class="card-img-top" alt="Frappe">
+                    <div class="card-body">
+                        <h5 class="card-title">Frappe</h5>
+                        <button onclick="addToCart('Frappe', 45)">Frappe    $45</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="refrescos.jpg" class="card-img-top" alt="Refresco">
+                    <div class="card-body">
+                        <h5 class="card-title">Refresco</h5>
+                        <button onclick="addToCart('Refresco', 20)">Refresco    $20</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="jugos.png" class="card-img-top" alt="Jugos">
+                    <div class="card-body">
+                        <h5 class="card-title">Jugos</h5>
+                        <button onclick="addToCart('Jugos', 20)">Jugos    $20</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="snacks">
+            <h2>Snacks</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="papas.jpg" class="card-img-top" alt="Papas a la Francesa">
+                    <div class="card-body">
+                        <h5 class="card-title">Papas a la Francesa</h5>
+                        <button onclick="addToCart('Papas a la Francesa', 35)">Papas a la Francesa    $35</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="papa.jpg" class="card-img-top" alt="Papas">
+                    <div class="card-body">
+                        <h5 class="card-title">Papas</h5>
+                        <button onclick="addToCart('Papas', 20)">Papas    $20</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="dulces.jpg" class="card-img-top" alt="Dulces">
+                    <div class="card-body">
+                        <h5 class="card-title">Dulces</h5>
+                        <button onclick="addToCart('Dulces', 5)">Dulces    $3-10</button> <!-- Asumiendo un precio promedio -->
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="banderilla.jpg" class="card-img-top" alt="Banderillas">
+                    <div class="card-body">
+                        <h5 class="card-title">Banderillas</h5>
+                        <button onclick="addToCart('Banderillas', 15)">Banderillas    $15</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Paletas.jpg" class="card-img-top" alt="Paletas de hielo">
+                    <div class="card-body">
+                        <h5 class="card-title">Paletas de hielo</h5>
+                         <button onclick="addToCart('Paletas de agua', 10)">Paletas de agua    $10</button><br><br>
+                         <button onclick="addToCart('Paletas de leche', 15)">Paletas de leche    $15</button>
+                     </div>
+                 </div>
+             </div>
+         </section>
+
+     </main>
+     <div id="myModal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+            <h2>Detalles de la Compra</h2>
+            <div id="folio-container">
+                <h2>Folio: <span id="modal-folio"></span></h2>
+                <div id="folio-details">
+                    <ul id="modal-details"></ul>
+                    <p>Total: $<span id="modal-total"></span></p>
+                </div>
+            </div>
+            <button id="download">Descargar Folio</button>
+        </div>
+    </div>
+    
+     <script src="script.js"></script>
+   
+ </body>
+ </html>
+ 
