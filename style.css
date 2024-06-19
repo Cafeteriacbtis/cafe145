@@ -302,7 +302,7 @@ button:hover {
         display: block;
         width: 100%;
         text-align: center;
-        margin-bottom: 30px; /* Aumentado para más espacio */
+        margin-bottom: 40px; /* Aumentado para más espacio */
     }
 
     .card-container {
