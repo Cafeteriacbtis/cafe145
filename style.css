@@ -3,7 +3,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #c5c3c3;
     color: #333;
 }
 
@@ -50,7 +50,7 @@ nav ul {
 
 .nav-pills .nav-item {
     display: inline-block;
-    margin-bottom: 30px; /* Aumentado para más espacio */
+    margin-bottom: 30px;
 }
 
 .nav-pills .nav-link {
@@ -59,13 +59,13 @@ nav ul {
     border-radius: 20px;
     padding: 10px 20px;
     margin: 0 5px;
-    text-decoration: none; /* Quitamos el subrayado inicial */
+    text-decoration: none;
     transition: transform 0.2s ease;
 }
 
 .nav-pills .nav-link:hover {
     background-color: #faa307;
-    text-decoration: underline; /* Subrayado al pasar el mouse */
+    text-decoration: underline;
     transform: scale(1.05);
 }
 
@@ -310,13 +310,79 @@ button:hover {
     font-weight: bold;
     text-align: center;
 }
+
 .remove-button {
     margin-left: 10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: 14px;
-    color: red; /* Cambia el color si es necesario */
+    color: red;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    .logo-container {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        margin-right: 0;
+    }
+
+    .nav-pills .nav-item {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-pills .nav-link {
+        display: block;
+        margin: 0 auto 10px auto;
+        width: 80%;
+        text-align: center;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    footer {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
 }
 
 /* Mobile Styles */
@@ -379,3 +445,4 @@ img {
         color: red;  /* Asegúrate de que el color sea visible */
         margin-left: 10px; /* Ajusta el margen si es necesario */
     }
+
