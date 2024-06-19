@@ -49,7 +49,7 @@ nav ul {
 
 .nav-pills .nav-item {
     display: inline-block;
-    margin-bottom: 10px; /* Agregado para separar del título */
+    margin-bottom: 20px; /* Aumentado para más espacio */
 }
 
 .nav-pills .nav-link {
@@ -258,49 +258,78 @@ button:hover {
     text-align: center;
     border-bottom: 2px solid #081208;
     padding-bottom: 10px;
-    margin-bottom: 20px;
 }
 
-#folio-details {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-#folio-details ul {
+#folio-container ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
-#folio-details ul li {
-    padding: 10px;
-    border-bottom: 1px dashed #ddd;
+#folio-container li {
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
-#folio-details p {
-    margin-top: 10px;
+#folio-container p {
+    margin: 0;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
     font-weight: bold;
     text-align: center;
-    font-size: 1.2rem;
 }
 
-#download {
-    background-color: #007BFF;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto;
-    width: 80%;
-    text-align: center;
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-pills .nav-item {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Aumentado para más espacio */
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        position: static;
+        padding: 20px;
+    }
 }
 
-#download:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card img {
+    height: auto;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 400px;
 }
