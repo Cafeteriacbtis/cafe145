@@ -349,12 +349,12 @@ button:hover {
     .nav-pills .nav-item {
         display: block;
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 5px; /* Reducido para que los elementos estén más juntos */
     }
 
     .nav-pills .nav-link {
         display: block;
-        margin: 0 auto 10px auto;
+        margin: 0 auto 5px auto; /* Reducido para que los elementos estén más juntos */
         width: 80%;
         text-align: center;
     }
@@ -383,6 +383,10 @@ button:hover {
         width: 90%;
         padding: 20px;
     }
+
+    .card-body {
+        color: black; /* Asegura que el texto de los productos sea negro en dispositivos móviles */
+    }
 }
 
 /* Mobile Styles */
@@ -407,7 +411,7 @@ button:hover {
         display: block;
         width: 100%;
         text-align: center;
-        margin-bottom: 10px; /* Aumentado para más espacio */
+        margin-bottom: 5px; /* Reducido para que los elementos estén más juntos */
     }
 
     .card-container {
@@ -440,9 +444,8 @@ img {
     max-width: 400px;
 }
 
-    .remove-button {
-        font-size: 16px;  /* Aumenta el tamaño de la fuente si es necesario */
-        color: red;  /* Asegúrate de que el color sea visible */
-        margin-left: 10px; /* Ajusta el margen si es necesario */
-    }
-
+.remove-button {
+    font-size: 16px;  /* Aumenta el tamaño de la fuente si es necesario */
+    color: red;  /* Asegúrate de que el color sea visible */
+    margin-left: 10px; /* Ajusta el margen si es necesario */
+}
