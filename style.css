@@ -212,7 +212,7 @@ button:hover {
     padding: 10px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 400px; /* Reduce the max-width to make it look more like a ticket */
+    max-width: 400px; /* Reduce el ancho máximo para que parezca más un ticket */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -225,6 +225,37 @@ button:hover {
     padding: 20px;
 }
 
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: #fb8500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #faa307;
+    transform: scale(1.05);
+}
 @keyframes modalopen {
     from { transform: translateY(-50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
@@ -278,6 +309,14 @@ button:hover {
     border-top: 1px solid #ccc;
     font-weight: bold;
     text-align: center;
+}
+.remove-button {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: red; /* Cambia el color si es necesario */
 }
 
 /* Mobile Styles */
